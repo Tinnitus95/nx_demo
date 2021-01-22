@@ -29,6 +29,13 @@
     "app-one-e2e": {
       "tags": [],
       "implicitDependencies": ["app-one"]
+    },
+    "app-two": {
+      "tags": []
+    },
+    "app-two-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app-two"]
     }
   }
 }
