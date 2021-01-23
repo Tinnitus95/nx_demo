@@ -20,6 +20,10 @@ pipeline {
                 sh 'npm run nx -- run-many --target=test --all'
             }
         }
+
+        stage('affected test') {
+            sh 'npm run affected:test'
+        }
        
     }
 }
