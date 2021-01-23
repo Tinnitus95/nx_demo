@@ -27,6 +27,12 @@ pipeline {
             }
         }
 
+        stage('test affected') {
+            steps {
+                sh 'npm run "nx affected --target=test --base=master~1 --head=master"'
+            }
+        }
+
         
        
     }
