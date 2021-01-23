@@ -4,7 +4,7 @@ pipeline {
      triggers {
         githubPush()
     }
-    tools {nodejs "node"}
+    tools {nodejs "node 15.6.0"}
     stages {
         stage('build') {
             steps {
