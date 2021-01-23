@@ -11,7 +11,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm --version'
-                sh 'npm install @angular/cli@11.0.0'
+                sh 'npm install @nrwl/cli@11.0.0'
+                sh 'npm -v @angular/cli'
             }
         }
        
