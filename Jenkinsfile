@@ -22,7 +22,9 @@ pipeline {
         }
 
         stage('affected test') {
-            sh 'npm run affected:test'
+            steps {
+                sh 'npm run affected:test'
+            }
         }
        
     }
