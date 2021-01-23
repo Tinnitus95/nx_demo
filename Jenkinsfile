@@ -4,10 +4,11 @@ pipeline {
      triggers {
         githubPush()
     }
-    stages {
-        withNPM() {
+    withNPM() {
+        stages {
+        
             stage('build') {
-                 steps {
+                steps {
                     sh 'npm --version'
                 }
             }
