@@ -17,15 +17,21 @@ pipeline {
         }
 
         stage("Test") {
-            sh 'npm run nx -- run-many --target=test --all'
+            steps {
+                sh 'npm run nx -- run-many --target=test --all'
+            }
         }
 
         stage("Lint") {
-            sh 'npm run nx -- run-many --target=lint --all'
+            steps {
+                sh 'npm run nx -- run-many --target=lint --all'
+            }
         }
 
         stage("Build") {
-            sh 'npm run nx -- run-many --target=build --all --prod'
+            steps {
+                sh 'npm run nx -- run-many --target=build --all --prod'
+            }
         }
 
         
