@@ -15,6 +15,11 @@ pipeline {
                 sh 'npm list'
             }
         }
+        stage('test') {
+            steps {
+                sh 'npm run nx -- run-many --target=test --all'
+            }
+        }
        
     }
 }
