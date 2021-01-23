@@ -16,20 +16,12 @@ pipeline {
             }
         }
 
-        stage('lint') {
-            steps {
-                sh 'npm run nx -- run-many --target=lint --all'
-            }
-        }
-        stage('test') {
-            steps {
-                sh 'npm run nx -- run-many --target=test --all'
-            }
-        }
+      
+
 
         stage('test affected') {
             steps {
-                sh 'npm run "nx affected --target=test --base=master~1 --head=master"'
+                sh 'npm run nx affected -- --target=test --base=master~1 --head=master'
             }
         }
 
