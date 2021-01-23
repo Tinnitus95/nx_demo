@@ -5,9 +5,11 @@ pipeline {
         githubPush()
     }
     stages {
-        stage('build') {
-            steps {
-                sh 'npm --version'
+        withNPM() {
+            stage('build') {
+                 steps {
+                    sh 'npm --version'
+                }
             }
         }
     }
