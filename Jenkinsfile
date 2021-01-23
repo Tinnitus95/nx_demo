@@ -11,7 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm --version'
-                sh 'npm install @nrwl/cli@11.0.0'
+                sh 'npm install'
                 sh 'npm list'
             }
         }
