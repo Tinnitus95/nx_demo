@@ -4,13 +4,11 @@ pipeline {
      triggers {
         githubPush()
     }
-    withNPM() {
-        stages {
-        
-            stage('build') {
-                steps {
-                    sh 'npm --version'
-                }
+    tools {nodejs "node"}
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
             }
         }
     }
