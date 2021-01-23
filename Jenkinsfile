@@ -15,17 +15,19 @@ pipeline {
                 sh 'npm list'
             }
         }
+
+        stage('lint') {
+            steps {
+                sh 'npm run nx -- run-many --target=lint --all'
+            }
+        }
         stage('test') {
             steps {
                 sh 'npm run nx -- run-many --target=test --all'
             }
         }
 
-        stage('affected test') {
-            steps {
-                sh 'npm run affected:test'
-            }
-        }
+        
        
     }
 }
