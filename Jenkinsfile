@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'npm --version'
                 sh 'npm install @nrwl/cli@11.0.0'
-                sh 'npm -v @angular/cli'
+                sh 'npm list'
             }
         }
        
