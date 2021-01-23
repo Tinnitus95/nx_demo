@@ -8,7 +8,7 @@ pipeline {
     stages {
         
 
-        stage('build') {
+        stage('Prepare') {
             steps {
                 sh 'npm --version'
                 sh 'npm install'
@@ -16,13 +16,16 @@ pipeline {
             }
         }
 
-      
+        stage("Test") {
+            sh 'npm run nx -- run-many --target=test --all'
+        }
 
+        stage("Lint") {
+            sh 'npm run nx -- run-many --target=lint --all'
+        }
 
-        stage('test affected') {
-            steps {
-                sh 'npm run nx -- affected --target=test --base=master~1 --head=master'
-            }
+        stage("Build") {
+            sh 'npm run nx -- run-many --target=build --all --prod'
         }
 
         
