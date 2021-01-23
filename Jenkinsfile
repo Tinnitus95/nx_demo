@@ -6,9 +6,17 @@ pipeline {
     }
     tools {nodejs "node 15.6.0"}
     stages {
+        
+
         stage('build') {
             steps {
                 sh 'npm --version'
+                sh 'npm install'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'npm t'
             }
         }
     }
